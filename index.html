@@ -230,120 +230,7 @@ h1 {
     line-height: 1.5;
 }
 
-/* Pricing Section */
-.pricing {
-    padding: 100px 60px;
-    background: #050505;
-}
-
-.pricing-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.price-card {
-    background: rgba(15,15,15,0.9);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 32px;
-    padding: 40px;
-    width: 340px;
-    transition: .3s;
-}
-
-.price-card.featured {
-    border-color: rgba(255,208,0,0.4);
-    background: linear-gradient(135deg, rgba(255,208,0,0.1), rgba(15,15,15,0.95));
-}
-
-.price-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffd000;
-    color: black;
-    padding: 5px 18px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 800;
-}
-
-.price-card {
-    position: relative;
-}
-
-.price-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.price {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #ffd000;
-    margin-bottom: 10px;
-}
-
-.price span {
-    font-size: 1rem;
-    color: #6b6b6b;
-    font-weight: normal;
-}
-
-.price-desc {
-    color: #6b6b6b;
-    margin-bottom: 30px;
-    font-size: 0.9rem;
-}
-
-.feature-list {
-    list-style: none;
-    margin: 30px 0;
-}
-
-.feature-list li {
-    padding: 10px 0;
-    color: #b5b5b5;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.feature-list li::before {
-    content: "✓";
-    color: #ffd000;
-    font-weight: bold;
-}
-
-.price-btn {
-    width: 100%;
-    padding: 14px;
-    border-radius: 50px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .25s;
-}
-
-.price-btn.featured-btn {
-    background: #ffd000;
-    color: black;
-    border: none;
-}
-
-.price-btn:hover {
-    background: #ffd000;
-    color: black;
-    transform: translateY(-2px);
-}
-
-/* Reviews */
+/* Reviews Section */
 .reviews {
     padding: 100px 60px;
     background: #050505;
@@ -381,45 +268,6 @@ h1 {
     font-size: 0.8rem;
 }
 
-/* Discord Banner */
-.discord-banner {
-    max-width: 1000px;
-    margin: 60px auto 0;
-    background: linear-gradient(135deg, rgba(88,101,242,0.1), rgba(15,15,15,0.9));
-    border: 1px solid rgba(88,101,242,0.3);
-    border-radius: 24px;
-    padding: 30px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.discord-info h4 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.discord-info p {
-    color: #9a9a9a;
-}
-
-.discord-btn {
-    background: #5865F2;
-    padding: 12px 30px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: .25s;
-}
-
-.discord-btn:hover {
-    background: #4752c4;
-    transform: translateY(-2px);
-}
-
 /* Footer */
 footer {
     padding: 50px 60px 30px;
@@ -438,18 +286,12 @@ footer {
         padding: 20px 25px;
     }
     
-    .features, .pricing, .reviews {
+    .features, .reviews {
         padding: 60px 25px;
     }
     
     .section-title {
         font-size: 2.2rem;
-    }
-    
-    .discord-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
     }
     
     h1 {
@@ -494,7 +336,7 @@ footer {
         <p class="subtitle">
             80+ modules. Undetected. Built for Fabric 1.21.11.
         </p>
-        <a href="#pricing" class="btn">
+        <a href="#features" class="btn">
             Get Started →
         </a>
     </div>
@@ -521,45 +363,6 @@ footer {
     </div>
 </section>
 
-<section id="pricing" class="pricing">
-    <h2 class="section-title">Choose your <span>plan</span></h2>
-    <div class="pricing-grid">
-        <div class="price-card">
-            <h3>Monthly</h3>
-            <div class="price">€14.99<span>/month</span></div>
-            <div class="price-desc">Full access, cancel anytime</div>
-            <ul class="feature-list">
-                <li>All 80+ modules</li>
-                <li>OP exploits & bypasses</li>
-                <li>Auto base finding</li>
-                <li>Auto-farm & utility</li>
-                <li>Regular updates</li>
-                <li>Discord support</li>
-                <li>1 device included</li>
-            </ul>
-            <button class="price-btn">Get Monthly</button>
-        </div>
-        
-        <div class="price-card featured">
-            <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#ffd000;color:black;padding:5px 18px;border-radius:50px;font-size:0.75rem;font-weight:800;">⭐ BEST VALUE</div>
-            <h3>Lifetime</h3>
-            <div class="price">€24.99<span>one time</span></div>
-            <div class="price-desc">Pay once, use forever</div>
-            <ul class="feature-list">
-                <li>All 80+ modules</li>
-                <li>OP exploits & bypasses</li>
-                <li>Auto base finding</li>
-                <li>Auto-farm & utility</li>
-                <li>Lifetime updates</li>
-                <li>Priority Discord support</li>
-                <li>1 device included</li>
-            </ul>
-            <button class="price-btn featured-btn">Get Lifetime →</button>
-        </div>
-    </div>
-    <p style="text-align:center;margin-top:40px;color:#6b6b6b;font-size:0.85rem;">We accept Cards, PayPal, Crypto, Apple Pay & Google Pay</p>
-</section>
-
 <section id="reviews" class="reviews">
     <h2 class="section-title">What our <span>users</span> say</h2>
     <div class="reviews-grid">
@@ -578,14 +381,6 @@ footer {
             <p class="review-text">"This is the best client. Period."</p>
             <p class="review-author">— Krypton+ Lifetime user</p>
         </div>
-    </div>
-    
-    <div class="discord-banner">
-        <div class="discord-info">
-            <h4>💬 Join our Discord</h4>
-            <p>5,000+ players — real feedback, instant support, latest updates</p>
-        </div>
-        <a href="#" class="discord-btn">Join Discord →</a>
     </div>
 </section>
 
