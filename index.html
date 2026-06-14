@@ -1,21 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Request Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Try Krypton Client</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:28px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#ffd000;
+    color:black;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+}
+
+.nav-links{
+    display:flex;
+    gap:50px;
+}
+
+.nav-links a{
+    color:#b5b5b5;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.glow{
+    position:absolute;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background:#ffd000;
+    filter:blur(180px);
+    opacity:.18;
+    animation:pulse 5s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.15);
+        opacity:.25;
+    }
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    max-width:1100px;
+    padding:20px;
+}
+
+h1{
+    font-size:clamp(4rem,10vw,8rem);
+    line-height:.95;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.highlight{
+    color:#ffd000;
+    font-style:italic;
+    text-shadow:0 0 35px rgba(255,208,0,.5);
+}
+
+.subtitle{
+    font-size:1.4rem;
+    color:#9a9a9a;
+    margin-bottom:50px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:520px;
+    max-width:90%;
+    height:80px;
+    border-radius:999px;
+    background:#ffd000;
+    color:black;
+    text-decoration:none;
+    font-size:1.35rem;
+    font-weight:800;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 50px rgba(255,208,0,.3);
+}
+
+.grid{
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:80px 80px;
+    mask-image:linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+</style>
 </head>
 <body>
-    <button id="attackBtn">Click here</button>
-    <script>
-        document.getElementById('attackBtn').addEventListener('click', function() {
-            // This sends many rapid requests to the user's own machine.
-            // Note: Modern browsers limit parallel requests per domain.
-            // This will not "DDoS" an external target; only affects local test page resources.
-            for (let i = 0; i < 1000; i++) {
-                fetch(window.location.href + '?cacheBust=' + i + '&rand=' + Math.random())
-                .catch(e => {});
-            }
-            alert("Sent many requests to the current page.");
-        });
-    </script>
+
+<div class="grid"></div>
+
+<nav>
+    <div class="logo">
+        <div class="logo-icon">Kr</div>
+        Krypton Client
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Download</a>
+        <a href="#">Support</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="glow"></div>
+
+    <div class="content">
+        <h1>
+            Try the most <span class="highlight">powerful</span><br>
+            Krypton Client
+        </h1>
+
+        <p class="subtitle">
+            Fast. Modern. Lightweight. Built for the best experience.
+        </p>
+
+        <a href="https://notdone.net" class="btn" target="_blank">
+            Download Now
+        </a>
+    </div>
+</section>
+
 </body>
 </html>
