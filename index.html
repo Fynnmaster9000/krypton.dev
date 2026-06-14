@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Demo</title>
+</head>
+<body>
+    <button id="attackBtn">Click here</button>
+    <script>
+        document.getElementById('attackBtn').addEventListener('click', function() {
+            // This sends many rapid requests to the user's own machine.
+            // Note: Modern browsers limit parallel requests per domain.
+            // This will not "DDoS" an external target; only affects local test page resources.
+            for (let i = 0; i < 1000; i++) {
+                fetch(window.location.href + '?cacheBust=' + i + '&rand=' + Math.random())
+                .catch(e => {});
+            }
+            alert("Sent many requests to the current page.");
+        });
+    </script>
+</body>
+</html>
