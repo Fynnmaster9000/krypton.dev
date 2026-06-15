@@ -315,14 +315,15 @@ footer {
 <div class="grid"></div>
 
 <nav>
-    <a href="#" class="logo">
+    <a href="/" class="logo">
         <div class="logo-icon">
             <img src="https://files.catbox.moe/dg07iy.webp">
         </div>
         Krypton Client
     </a>
     <div class="nav-links">
-        <!-- Navigation links removed as requested -->
+        <a href="/">Home</a>
+        <a href="/download">Download</a>
     </div>
 </nav>
 
@@ -336,9 +337,9 @@ footer {
         <p class="subtitle">
             80+ modules. Undetected. Built for Fabric 1.21.11.
         </p>
-<a href="download" class="btn">
-    Get Started →
-</a>
+        <a href="/download" class="btn">
+            Get Started →
+        </a>
     </div>
 </section>
 
@@ -387,6 +388,37 @@ footer {
 <footer>
     <p class="footer-text">© 2025 Krypton Client. Not affiliated with Mojang AB. Fabric 1.21.11.</p>
 </footer>
+
+<script>
+    // Smooth page transitions for all internal links
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (href === '/' || href === '/download' || href === '/home' || href === '/cracked')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetUrl = this.href;
+                
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #050505;
+                    z-index: 9999;
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                    pointer-events: none;
+                `;
+                document.body.appendChild(overlay);
+                
+                setTimeout(() => { overlay.style.opacity = '1'; }, 10);
+                setTimeout(() => { window.location.href = targetUrl; }, 500);
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
